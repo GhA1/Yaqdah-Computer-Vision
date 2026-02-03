@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaqza - Technical Documentation</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body { 
+            background-color: #09090b; 
+            color: #e4e4e7; 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .mono-font { font-family: 'JetBrains Mono', monospace; }
+        
+        /* Glass Effect */
+        .glass { 
+            background: rgba(24, 24, 27, 0.6); 
+            backdrop-filter: blur(12px); 
+            border: 1px solid rgba(255, 255, 255, 0.05); 
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #10b981;
+            border-radius: 2px;
+        }
+
+        /* Terminal Scrollbar */
+        .terminal-scroll::-webkit-scrollbar { width: 6px; }
+        .terminal-scroll::-webkit-scrollbar-track { background: #18181b; }
+        .terminal-scroll::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+
+        .tech-icon {
+            transition: transform 0.3s;
+        }
+        .tech-icon:hover {
+            transform: scale(1.1);
+            color: #10b981;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950">
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-zinc-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="logo.png" class="w-8 h-8 object-contain">
+                <span class="text-2xl font-bold text-white tracking-wider">يقظة</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-zinc-400">
+                <a href="#architecture" class="hover:text-emerald-400 transition">Architecture</a>
+                <a href="#results" class="hover:text-emerald-400 transition">Results</a>
+                <a href="#tools" class="hover:text-emerald-400 transition">Tech Stack</a>
+                <a href="#team" class="hover:text-emerald-400 transition">Team</a>
+            </div>
+            <a href="index.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-sm font-bold transition">
+                Launch Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 text-center">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Technical Documentation
+        </h1>
+        <p class="text-xl text-zinc-400 max-w-2xl mx-auto">
+            Comprehensive analysis of the Yaqza Surveillance System, featuring YOLO performance metrics and architectural design.
+        </p>
+    </header>
+
+    <div class="container mx-auto px-6 space-y-32 pb-20">
+
+        <section id="architecture">
+            <h2 class="text-3xl font-bold text-white section-title">System Architecture</h2>
+            <div class="relative mt-8">
+                <div class="glass p-10 rounded-3xl border border-zinc-800">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-center text-center">
+                        
+                        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-700">
+                            <div class="w-12 h-12 bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-blue-400">
+                                <i data-lucide="camera" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-white">Video Source</h3>
+                            <p class="text-xs text-zinc-500 mt-1">CCTV / RTSP / MP4</p>
+                        </div>
+
+                        <div class="text-zinc-600"><i data-lucide="arrow-right" class="w-6 h-6 mx-auto animate-pulse"></i></div>
+
+                        <div class="bg-zinc-900 p-6 rounded-xl border-2 border-emerald-600 relative shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold">CORE ENGINE</div>
+                            <div class="w-12 h-12 bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-emerald-400">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-white">YOLO</h3>
+                            <p class="text-xs text-zinc-500 mt-1">Object Detection</p>
+                        </div>
+
+                        <div class="text-zinc-600"><i data-lucide="arrow-right" class="w-6 h-6 mx-auto animate-pulse"></i></div>
+
+                        <div class="bg-zinc-900 p-6 rounded-xl border border-zinc-700">
+                            <div class="w-12 h-12 bg-purple-900/30 rounded-full flex items-center justify-center mx-auto mb-3 text-purple-400">
+                                <i data-lucide="brain-circuit" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="font-bold text-white">Gemini Agent</h3>
+                            <p class="text-xs text-zinc-500 mt-1">Context Analysis</p>
+                        </div>
+
+                        <div class="col-span-5 mt-6 border-t border-zinc-800 pt-6">
+                            <div class="glass p-4 rounded-xl inline-block">
+                                <h3 class="font-bold text-white flex items-center gap-2 justify-center">
+                                    <i data-lucide="layout-dashboard" class="text-emerald-500"></i>
+                                    Real-time Dashboard (FastAPI)
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2 class="text-3xl font-bold text-white section-title">YOLO Performance Metrics</h2>
+            <p class="text-zinc-400 mb-8">
+                The model achieved state-of-the-art results on the validation set, with exceptional accuracy in identifying critical threats like violence and criminals.
+            </p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="glass rounded-2xl overflow-hidden border border-zinc-800">
+                    <table class="w-full text-left">
+                        <thead class="bg-zinc-900 text-zinc-400 text-xs uppercase">
+                            <tr>
+                                <th class="p-4">Class</th>
+                                <th class="p-4 text-right">Precision</th>
+                                <th class="p-4 text-right">Recall</th>
+                                <th class="p-4 text-right text-emerald-400">mAP @ 50</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-zinc-800 text-sm mono-font text-zinc-300">
+                            <tr class="bg-emerald-900/20">
+                                <td class="p-4 font-bold text-white">Violence</td>
+                                <td class="p-4 text-right">0.962</td>
+                                <td class="p-4 text-right">0.919</td>
+                                <td class="p-4 text-right font-bold text-emerald-400">0.970</td>
+                            </tr>
+                            <tr class="hover:bg-zinc-900/50">
+                                <td class="p-4">Criminal</td>
+                                <td class="p-4 text-right">0.931</td>
+                                <td class="p-4 text-right">0.862</td>
+                                <td class="p-4 text-right">0.945</td>
+                            </tr>
+                            <tr class="hover:bg-zinc-900/50">
+                                <td class="p-4">Person</td>
+                                <td class="p-4 text-right">0.913</td>
+                                <td class="p-4 text-right">0.849</td>
+                                <td class="p-4 text-right">0.928</td>
+                            </tr>
+                            <tr class="hover:bg-zinc-900/50">
+                                <td class="p-4">Projectile Weapon</td>
+                                <td class="p-4 text-right">0.885</td>
+                                <td class="p-4 text-right">1.000</td>
+                                <td class="p-4 text-right">0.995</td>
+                            </tr>
+                            <tr class="hover:bg-zinc-900/50">
+                                <td class="p-4">Non-Violence</td>
+                                <td class="p-4 text-right">0.890</td>
+                                <td class="p-4 text-right">0.805</td>
+                                <td class="p-4 text-right">0.898</td>
+                            </tr>
+                            <tr class="bg-zinc-900 font-bold">
+                                <td class="p-4 text-emerald-500">ALL CLASSES</td>
+                                <td class="p-4 text-right">0.856</td>
+                                <td class="p-4 text-right">0.759</td>
+                                <td class="p-4 text-right text-emerald-400">0.839</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass p-6 rounded-2xl flex flex-col justify-center items-center text-center border-t-4 border-emerald-500">
+                        <i data-lucide="zap" class="w-8 h-8 text-emerald-500 mb-2"></i>
+                        <h3 class="text-3xl font-bold text-white mono-font">6.8 ms</h3>
+                        <p class="text-zinc-500 text-sm">Average Inference Speed</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl flex flex-col justify-center items-center text-center border-t-4 border-blue-500">
+                        <i data-lucide="activity" class="w-8 h-8 text-blue-500 mb-2"></i>
+                        <h3 class="text-3xl font-bold text-white mono-font">142 FPS</h3>
+                        <p class="text-zinc-500 text-sm">Real-time Processing</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl col-span-2 border border-zinc-800">
+                        <h4 class="text-zinc-400 text-sm font-bold mb-4 uppercase">Training Validation Loss</h4>
+                        <div class="flex items-end gap-1 h-24 w-full">
+                            <div class="bg-emerald-900 w-full h-[80%] rounded-t"></div>
+                            <div class="bg-emerald-800 w-full h-[60%] rounded-t"></div>
+                            <div class="bg-emerald-700 w-full h-[40%] rounded-t"></div>
+                            <div class="bg-emerald-600 w-full h-[20%] rounded-t"></div>
+                            <div class="bg-emerald-500 w-full h-[10%] rounded-t"></div>
+                        </div>
+                        <p class="text-xs text-zinc-500 mt-2 text-center">50 Epochs Completed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tools">
+            <h2 class="text-3xl font-bold text-white section-title">Tools & Technologies</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="h-12 w-12 mx-auto mb-3">
+                    <h4 class="text-white font-bold">Python</h4>
+                    <p class="text-zinc-500 text-xs">Core Language</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <div class="h-12 w-12 mx-auto mb-3 flex items-center justify-center bg-zinc-800 rounded-full text-2xl font-bold text-blue-500">Y</div>
+                    <h4 class="text-white font-bold">YOLOv12</h4>
+                    <p class="text-zinc-500 text-xs">Ultralytics Lib</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Google-flutter-logo.png" class="h-12 w-12 mx-auto mb-3 grayscale opacity-50"> <h4 class="text-white font-bold">Google Gemini</h4>
+                    <p class="text-zinc-500 text-xs">Generative AI</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" class="h-12 w-auto mx-auto mb-3">
+                    <h4 class="text-white font-bold">FastAPI</h4>
+                    <p class="text-zinc-500 text-xs">Backend Server</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <img src="https://opencv.org/wp-content/uploads/2020/07/OpenCV_logo_no_text.png" class="h-12 w-12 mx-auto mb-3">
+                    <h4 class="text-white font-bold">OpenCV</h4>
+                    <p class="text-zinc-500 text-xs">Image Processing</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <img src="https://tailwindcss.com/_next/static/media/tailwindcss-mark.3c5441fc7a190fb1800d4a5c7f07ba4b1345a9c8.svg" class="h-12 w-12 mx-auto mb-3">
+                    <h4 class="text-white font-bold">TailwindCSS</h4>
+                    <p class="text-zinc-500 text-xs">Frontend Styling</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <div class="h-12 w-12 mx-auto mb-3 flex items-center justify-center bg-purple-900/50 rounded-full text-2xl font-bold text-purple-400">R</div>
+                    <h4 class="text-white font-bold">Roboflow</h4>
+                    <p class="text-zinc-500 text-xs">Dataset Management</p>
+                </div>
+                <div class="glass p-6 rounded-2xl tech-icon">
+                    <div class="h-12 w-12 mx-auto mb-3 flex items-center justify-center bg-blue-900/50 rounded-full text-xl font-bold text-blue-400">VS</div>
+                    <h4 class="text-white font-bold">VS Code</h4>
+                    <p class="text-zinc-500 text-xs">Development IDE</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="mb-20">
+            <h2 class="text-3xl font-bold text-white section-title mb-10">Developed By</h2>
+            <div class="glass rounded-3xl p-10 border border-zinc-800 text-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -z-10"></div>
+                
+                <div class="flex flex-wrap justify-center gap-16 md:gap-24">
+                    
+                    <div class="group flex flex-col items-center">
+                        <div class="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300">
+                            <i data-lucide="user" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl text-white font-bold group-hover:text-emerald-400 transition">Lama AlQahtani</h3>
+                        <p class="text-zinc-500 text-sm">AI Engineer</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center">
+                        <div class="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300">
+                            <i data-lucide="user" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl text-white font-bold group-hover:text-emerald-400 transition">Ghada AlQahtani</h3>
+                        <p class="text-zinc-500 text-sm">System Architect</p>
+                    </div>
+
+                    <div class="group flex flex-col items-center">
+                        <div class="w-20 h-20 bg-zinc-800 rounded-full flex items-center justify-center mb-4 border border-zinc-700 group-hover:border-emerald-500 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all duration-300">
+                            <i data-lucide="user" class="w-8 h-8 text-zinc-400 group-hover:text-white transition"></i>
+                        </div>
+                        <h3 class="text-xl text-white font-bold group-hover:text-emerald-400 transition">Jumanah Alrehaili</h3>
+                        <p class="text-zinc-500 text-sm">Data Scientist</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="border-t border-zinc-800 bg-zinc-950 py-10 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <img src="logo.png" class="w-6 h-6 grayscale opacity-50">
+            <span class="text-xl font-bold text-zinc-600 mono-font">YAQZA SYSTEM</span>
+        </div>
+        <p class="text-zinc-500 text-sm">© 2025 All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

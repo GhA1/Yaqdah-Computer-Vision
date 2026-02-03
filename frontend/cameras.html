@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaqza - Live Feeds</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { background-color: #09090b; color: #e4e4e7; font-family: 'Segoe UI', sans-serif; }
+        .logo-font { font-family: 'Cairo', sans-serif; }
+        .glass { background: rgba(24, 24, 27, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .sidebar-link { transition: all 0.3s; }
+        .sidebar-link:hover, .sidebar-link.active { background-color: #064e3b; color: white; border-right: 3px solid #10b981; }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-zinc-950">
+
+    <aside class="w-64 bg-zinc-900 border-r border-zinc-800 flex flex-col justify-between z-20">
+        <div>
+            <div class="p-6 flex items-center gap-3 border-b border-zinc-800">
+                <img src="logo.png" class="w-10 h-10 object-contain drop-shadow-[0_0_5px_rgba(16,185,129,0.3)]">
+                <h1 class="text-3xl font-bold text-white logo-font tracking-wider">يقظة</h1>
+            </div>
+            <nav class="mt-8 px-4 space-y-2">
+                <a href="index.html" class="sidebar-link flex items-center gap-3 p-3 rounded-xl text-zinc-400 hover:text-white">
+                    <i data-lucide="layout-dashboard"></i> <span>Dashboard</span>
+                </a>
+                <a href="cameras.html" class="sidebar-link active flex items-center gap-3 p-3 rounded-xl text-zinc-400 hover:text-white">
+                    <i data-lucide="cctv"></i> <span>Live Feeds</span>
+                </a>
+                <a href="logs.html" class="sidebar-link flex items-center gap-3 p-3 rounded-xl text-zinc-400 hover:text-white">
+                    <i data-lucide="file-text"></i> <span>Incident Logs</span>
+                </a>
+            </nav>
+        </div>
+        <div class="p-4">
+            <div class="bg-zinc-800/50 p-4 rounded-xl border border-zinc-700">
+                <div class="flex items-center gap-2 text-emerald-400 mb-2">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    <span class="text-xs font-bold">SYSTEM ONLINE</span>
+                </div>
+                <p class="text-xs text-zinc-500">AI Agent Active</p>
+            </div>
+        </div>
+    </aside>
+
+    <main class="flex-1 overflow-y-auto bg-zinc-950 p-8">
+        <h2 class="text-2xl font-bold mb-6 text-white flex items-center gap-3">
+            <span class="relative flex h-3 w-3">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            </span>
+            Live Surveillance Room
+        </h2>
+        <div class="glass p-2 rounded-2xl border-2 border-zinc-800 relative overflow-hidden shadow-2xl">
+            <div class="absolute top-4 left-4 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded shadow-lg z-10 tracking-widest">
+                LIVE FEED • CAM-01
+            </div>
+            <img src="http://localhost:8000/video_feed" class="w-full h-[650px] object-contain rounded-xl bg-black">
+        </div>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

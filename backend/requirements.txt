@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+opencv-python
+ultralytics
+google-generativeai
+python-multipart
+python-dotenv
+pillow
+sqlalchemy
