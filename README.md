@@ -17,14 +17,14 @@ This project aims to support surveillance systems by reducing reliance on manual
 ---
 
 ## Repository Structure
-project/
-│
-├── main.py # Project entry point
-├── ai_engine.py # Core AI and computer vision models
-├── database.py # Data storage and retrieval
-├── alerts_images/ # Captured alert images
-├── frontend/ # HTML, CSS, and UI assets
-└── requirements.txt # Python dependencies
+
+- `main.py` – Project entry point.
+- `ai_engine.py` – Core AI model implementations.
+- `database.py` – Handles data storage and retrieval.
+- `alerts_images/` – Stores captured alert images.
+- `frontend/` – HTML, CSS, and image files for dashboards and project interface.
+- `requirements.txt` – Lists Python dependencies.
+
 
 ---
 
