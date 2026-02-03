@@ -1,46 +1,22 @@
-# 🚨 Yaqdah – Computer Vision Project
+About
+Yaqdah-CV is a computer vision surveillance project developed by Lama Alqahtani. It focuses on real-time behavior monitoring and alert image capture using AI techniques, with a web-based frontend to display dashboards, project info, and alerts.
 
-Yaqdah is an AI-powered computer vision project designed to support surveillance and monitoring systems by analyzing visual data and detecting patterns that may indicate suspicious behavior.
+Repository Structure
+main.py – Project entry point.
+ai_engine.py – Core AI model implementations.
+database.py – Handles data storage and retrieval.
+alerts_images/ – Stores captured alert images.
+frontend/ – HTML, CSS, and image files for dashboards and project interface.
+requirements.txt – Lists Python dependencies.
 
----
+Features
+Real-time behavior monitoring via computer vision
+Alert image capture for suspicious events
+Web-based dashboards for visualization
+Project info and contributors pages
+Modular and easy-to-run architecture
 
-## 📌 Project Overview
-This project focuses on applying computer vision and machine learning techniques to enhance security monitoring.  
-It aims to assist decision-makers by providing automated visual analysis instead of relying solely on manual observation.
-
----
-
-## 🗂️ Project Structure
-
----
-
-## 🛠️ Technologies Used
-- Python
-- Computer Vision
-- Machine Learning
-- HTML / CSS
-- Backend & Frontend Development
-
----
-
-## 🎯 Key Features
-- Visual data analysis
-- Computer vision-based detection
-- Simple and clear project structure
-- Designed for learning and academic purposes
-
----
-
-## 🚀 Future Improvements
-- Improve model accuracy
-- Add real-time processing
-- Enhance UI design
-- Integrate alert mechanisms
-
----
-
-## 👩‍💻 Author
-**Ghadah Alqhtani**  
-Computer Science Graduate  
-AI & Data Science
+Installation
+pip install -r requirements.txt
+python main.py
 
